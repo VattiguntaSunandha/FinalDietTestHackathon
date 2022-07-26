@@ -245,7 +245,10 @@
 				<version>${maven.surefire.version}</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>Regressiontestng.xml</suiteXmlFile>
+						<suiteXmlFile>mastertestng.xml</suiteXmlFile>
+						<suiteXmlFile>sanitytestng.xml</suiteXmlFile>
+						<suiteXmlFile>smoketestng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<argLine>
                    -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.9.1/aspectjweaver-1.9.9.1.jar"
