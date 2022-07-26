@@ -1,9 +1,6 @@
 package runner;
 
-    //import io.cucumber.junit.Cucumber;
-	//import org.junit.runner.RunWith;
-	import io.cucumber.testng.AbstractTestNGCucumberTests;
-	import io.cucumber.testng.CucumberOptions;
+    import io.cucumber.testng.CucumberOptions;
 	import org.testng.annotations.Test;
 
 
@@ -18,7 +15,7 @@ package runner;
 	      dryRun = false,
 		  publish = true)
 
-	public class SanityTestRunner extends AbstractTestNGCucumberTests
+	public class SanityTestRunner extends io.cucumber.testng.AbstractTestNGCucumberTests
 	{
 		 
 	}
