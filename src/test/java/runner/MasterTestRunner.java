@@ -14,7 +14,8 @@ import org.testng.annotations.Test;
 	//@RunWith(Cucumber.class) 
 	@CucumberOptions(features ="src/test/resources/features",
 	glue= {"RecipesAPI","GetUserAPI","UserAPI","MorbidityAPI","AppHooks"},
-	plugin={"pretty"},
+	plugin={"pretty","json:target/cucumber.json"},
+	
 	//"rerun:target/failedrerun.txt","html:target/HtmlReports","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
     monochrome = true,
 	dryRun = false,
