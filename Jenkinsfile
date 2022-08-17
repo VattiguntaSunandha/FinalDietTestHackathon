@@ -10,7 +10,7 @@ pipeline{
          
          withMaven(maven: 'maven_3_8_5'){
          
-           sh 'mvn clean install'
+           cmd 'mvn clean install'
        }
      
      }
