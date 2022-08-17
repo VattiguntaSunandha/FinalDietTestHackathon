@@ -1,37 +1,21 @@
-pipeline{
-
-   agent any
-   
-   stages{
-   
-     stage ('Compile Stage'){
-     
-       steps{
-         
-         withMaven(maven: 'maven_3_8_5'){
-         
-           sh 'mvn clean install'
-       }
-     
-     }
-   
-   }
-   
-     stage ('Test Stage'){
-       steps{
-         withMaven(maven: 'maven_3_8_5'){
-         
-           sh 'mvn test'
-       }
-       }
-     }
+pipeline {
+    agent any
     
-    stage ('Cucumber Reports'){
-      steps{
-        cucumber buildStatus: "UNSTABLE",
-          fileIncludePattern: "**/cucumber.json",
-          jsonReportDirectory: 'target'
-      }
+    environment{
+        PATH = "Downloads/apache-maven-3.8.5-bin/apache-maven-3.8.5/bin:$PATH"
     }
-}
+
+    stages {
+        stage("clone code") {
+            steps {
+                git credentialsId: 'MyGithub', url: 'https://github.com/VattiguntaSunandha/FinalDietTestHackathon.git'
+            }
+        }
+        
+        stage("build code"){
+            steps{
+                sh "mvn clean install"
+            }
+        }
+    }
 }
